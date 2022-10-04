@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Hello Kotlin</string>
     <string name="btnPlay">Play</string>
+    <string name="inputText">Introduce un texto!</string>
+    <string name="done">Listo!</string>
+    <string name="unavailable">No es capaz de utilizar TextToSpeech :(</string>
 </resources>

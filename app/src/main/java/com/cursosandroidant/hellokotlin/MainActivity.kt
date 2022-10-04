@@ -10,7 +10,7 @@ import java.util.*
 
 class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
-    var tts : TextToSpeech? = null
+    private var tts : TextToSpeech? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,21 +25,21 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         var message = findViewById<EditText>(R.id.etMessage).text.toString()
 
         if (message.isEmpty()) {
-            findViewById<TextView>(R.id.tvStatus).text = "Introduce un texto!"
+            findViewById<TextView>(R.id.tvStatus).text = getString(R.string.inputText)
             message = "¿Es en serio? Ya pon algo en el edit text"
         }
         /*tts!!.speak(message, TextToSpeech.QUEUE_FLUSH, null, "")*/
-        if (!message.isEmpty()) {
+        if (message.isNotEmpty()) {
             tts!!.speak(message, TextToSpeech.QUEUE_FLUSH, null, "")
         }
     }
 
     override fun onInit(status: Int) {
         if (status == TextToSpeech.SUCCESS){
-            findViewById<TextView>(R.id.tvStatus).text = "Listo!"
-            tts!!.setLanguage(Locale("ES"))
+            findViewById<TextView>(R.id.tvStatus).text = getString(R.string.done)
+            tts!!.language = Locale("ES")
         } else {
-            findViewById<TextView>(R.id.tvStatus).text = "No es capaz de utilizar TextToSpeech :("
+            findViewById<TextView>(R.id.tvStatus).text = getString(R.string.unavailable)
         }
 
     }
