@@ -4,4 +4,6 @@
     <string name="inputText">Introduce un texto!</string>
     <string name="done">Listo!</string>
     <string name="unavailable">No es capaz de utilizar TextToSpeech :(</string>
+    <string name="escribe_texto">Escribe el texto a leer</string>
+    <string name="saludo">Hello Kotlin!</string>
 </resources>
